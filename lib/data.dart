@@ -2,6 +2,18 @@ part of 'main.dart';
 
 final n = 3.0;
 
+final List<List<int>> boxRhythmNums = [[], [], [], []];
+final List<List<int>> vibrateRhythmNums = [[250], [250], [250], [250]];
+
+
+final List<int> howFullNums = [0];
+
+var currentListNums = [[], [], [], []];
+var isAccessible = false;
+int currentMeasureNum = 1;
+
+List<bool> successfulDropNums = [null, null, null, null];
+
 //general data class
 class Data {
   List<Color> listOfColors;
@@ -27,7 +39,7 @@ class Data {
 /*--------------------------------Measure Data-----------------------------------*/
 final measureData = Data(listOfColors: measureListOfColors, listOfDarkColors: measureListOfDarkColors, listOfWidths: measureListOfWidths,
     listOfDurations: measureListOfDurations, listOfNames: measureListOfNames, rhythmArrays: measureRhythmArrays,
-    labelArray: measureLabelArray, listOfScales: measureListOfScales, boxType: 'Measure',
+    labelArray: measureLabelArray, listOfScales: measureListOfScales, boxType: 'MS Measure',
     listOfContainers: measureListOfContainers, boxHeight: measureBoxHeight, boxWidth: measureBoxWidth,
     maxFull: measureMaxFull);
 
@@ -106,7 +118,7 @@ final measureMaxFull = 16;
 /*--------------------------------Beat Data-----------------------------------*/
 final beatData = Data(listOfColors: beatListOfColors, listOfDarkColors: beatListOfDarkColors, listOfWidths: beatListOfWidths,
     listOfDurations: beatListOfDurations, listOfNames: beatListOfNames, rhythmArrays: beatRhythmArrays,
-    labelArray: beatLabelArray, listOfScales: beatListOfScales, boxType: 'Beat',
+    labelArray: beatLabelArray, listOfScales: beatListOfScales, boxType: 'MS Beat',
     listOfContainers: beatListOfContainers, boxHeight: beatBoxHeight, boxWidth: beatBoxWidth,
     maxFull: beatMaxFull);
 
@@ -174,7 +186,7 @@ final beatMaxFull = 4;
 /*--------------------------------ThreeFour Data-----------------------------------*/
 final threeFourData = Data(listOfColors: threeFourListOfColors, listOfDarkColors: threeFourListOfDarkColors, listOfWidths: threeFourListOfWidths,
     listOfDurations: threeFourListOfDurations, listOfNames: threeFourListOfNames, rhythmArrays: threeFourRhythmArrays,
-    labelArray: threeFourLabelArray, listOfScales: threeFourListOfScales, boxType: '3/4',
+    labelArray: threeFourLabelArray, listOfScales: threeFourListOfScales, boxType: 'MS 3/4',
     listOfContainers: threeFourListOfContainers, boxHeight: threeFourBoxHeight, boxWidth: threeFourBoxWidth,
     maxFull: threeFourMaxFull);
 
